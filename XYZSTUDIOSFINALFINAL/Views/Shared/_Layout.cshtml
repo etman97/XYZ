@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title -  XYZ STUDIOS</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+
+    <div>
+        <ul class="nav navbar-nav navbar-fixed-top" style="height:48px; width:100%;">
+            <li>@Html.ActionLink("Main", "Main", "Home")</li>
+            <li>@Html.ActionLink("Wedding", "Wedding", "Home")</li>
+            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+            @if (Request.IsAuthenticated)
+            {
+                <li><a href="/account/logout">Logout</a></li>
+            }
+            else
+            {
+                if (ViewBag.Title == "Login")
+                {
+                    <li class="active"><a href="/account/login">Login</a></li>
+                }
+                else
+                {
+                    <li><a href="/account/login">Login</a></li>
+                }
+            }
+
+            @if (Request.IsAuthenticated && User.IsInRole("User"))
+            {
+                if (ViewBag.Title == "User Profile")
+                {
+                    <li class="active">@Html.Action("UserNavPartial", "Account", new { area = "" })</li>
+
+                }
+                else
+                {
+                    <li>@Html.Action("UserNavPartial", "Account", new { area = "" })</li>
+                }
+            }
+
+            @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+            {
+
+                <li>@Html.ActionLink("Admin Area", "Index", "Dashboard", new { area = "Admin" }, null) </li>
+
+            }
+        </ul>
+    </div>
+
+    <div>
+
+        @RenderBody()
+
+        <footer>
+            <p>&copy;  @DateTime.Now.Year - XYZ STUDIOS</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
