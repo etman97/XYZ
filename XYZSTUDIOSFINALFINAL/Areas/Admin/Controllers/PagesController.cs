@@ -1,8 +1,10 @@
 ﻿using XYZSTUDIOSFINALFINAL.Models.Data;
 using XYZSTUDIOSFINALFINAL.Models.ViewModels.Pages;
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web.Helpers;
 using System.Web;
 using System.Web.Mvc;
 
@@ -40,7 +42,7 @@ namespace XYZSTUDIOSFINALFINAL.Areas.Admin.Controllers
             return View(model);
         }
         // POST: Admin/Pages/AddPage
-        [HttpPost]
+        [HttpPost , ValidateInput(false)]
         public ActionResult AddPage(PageVM model)
         {
             // Check model state
@@ -72,10 +74,8 @@ namespace XYZSTUDIOSFINALFINAL.Areas.Admin.Controllers
                     return View(model);
                 }
 
-                // DTO the rest
-
+                //DTO the rest
                 dto.Body = model.Body;
-             
 
                 // Save DTO
                 db.pages.Add(dto);
@@ -110,6 +110,7 @@ namespace XYZSTUDIOSFINALFINAL.Areas.Admin.Controllers
                 // Init pageVM
                 model = new PageVM(dto);
                 model.Users = new SelectList(db.Users.ToList(), "Id", "Username");
+
             }
 
             // Return view with model
@@ -117,7 +118,7 @@ namespace XYZSTUDIOSFINALFINAL.Areas.Admin.Controllers
         }
 
         // POST: Admin/Pages/EditPage/id
-        [HttpPost]
+        [HttpPost , ValidateInput(false)]
         public ActionResult EditPage(PageVM model)
         {
             // Check model state
@@ -126,11 +127,11 @@ namespace XYZSTUDIOSFINALFINAL.Areas.Admin.Controllers
                 return View(model);
             }
 
+            // Get page id
+            int id = model.Id;
+
             using (Db db = new Db())
             {
-                // Get page id
-                int id = model.Id;
-
                 model.Users = new SelectList(db.Users.ToList(), "Id", "Username");
 
                 // Get the page
@@ -152,6 +153,7 @@ namespace XYZSTUDIOSFINALFINAL.Areas.Admin.Controllers
 
                 // DTO the rest
                 dto.Body = model.Body;
+
                 // Save the DTO
                 db.SaveChanges();
             }
@@ -163,5 +165,48 @@ namespace XYZSTUDIOSFINALFINAL.Areas.Admin.Controllers
             return RedirectToAction("EditPage");
         }
 
+        // GET: Admin/Pages/PageDetails/id
+        public ActionResult PageDetails(int id)
+        {
+            // Declare PageVM
+            PageVM model;
+
+            using (Db db = new Db())
+            {
+                // Get the page
+                PageDTO dto = db.pages.Find(id);
+
+                // Confirm page exists
+                if (dto == null)
+                {
+                    return Content("The page does not exist.");
+                }
+
+                // Init PageVM
+                model = new PageVM(dto);
+            }
+
+            // Return view with model
+            return View(model);
+        }
+
+        // GET: Admin/Pages/DeletePage/id
+        public ActionResult DeletePage(int id)
+        {
+            using (Db db = new Db())
+            {
+                // Get the page
+                PageDTO dto = db.pages.Find(id);
+
+                // Remove the page
+                db.pages.Remove(dto);
+
+                // Save
+                db.SaveChanges();
+            }
+
+            // Redirect
+            return RedirectToAction("Index");
+        }
     }
 }

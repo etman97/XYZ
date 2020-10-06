@@ -20,6 +20,7 @@ namespace XYZSTUDIOSFINALFINAL.Models.ViewModels.Account
             LastName = row.LastName;
             EmailAddress = row.EmailAddress;
             Username = row.Username;
+            PhoneNumber = row.PhoneNumber;
             Password = row.Password;
         }
 
@@ -33,6 +34,9 @@ namespace XYZSTUDIOSFINALFINAL.Models.ViewModels.Account
         public string EmailAddress { get; set; }
         [Required]
         public string Username { get; set; }
+        [Required]
+        [DataType(DataType.PhoneNumber)]
+        public string PhoneNumber { get; set; }
         public string Password { get; set; }
         public string ConfirmPassword { get; set; }
     }

@@ -19,21 +19,21 @@ namespace XYZSTUDIOSFINALFINAL.Models.ViewModels.Pages
         {
             Id = row.Id;
             UserId = row.UserId;
-            Body = row.Body;
             Title = row.Title;
             Username = row.Username;
+            Body = row.Body;
         }
 
         public int Id { get; set; }
         public int UserId { get; set; }
         [Required]
-        [StringLength(int.MaxValue, MinimumLength = 3)]
-        [AllowHtml]
-        public string Body { get; set; }
-        [Required]
         [StringLength(50, MinimumLength = 3)]
         public string Title { get; set; }
         public string Username { get; set; }
+        [AllowHtml]
+        public string Body { get; set; }
+
         public IEnumerable<SelectListItem> Users { get; set; }
+
     }
 }

@@ -35,12 +35,16 @@
                 if (ViewBag.Title == "User Profile")
                 {
                     <li class="active">@Html.Action("UserNavPartial", "Account", new { area = "" })</li>
+                    <li><a href="/Pages/Index">My page</a></li>
 
                 }
                 else
                 {
                     <li>@Html.Action("UserNavPartial", "Account", new { area = "" })</li>
+                    <li><a href="/Pages/Index">My page</a></li>
+
                 }
+
             }
 
             @if (Request.IsAuthenticated && User.IsInRole("Admin"))
@@ -49,8 +53,11 @@
                 <li>@Html.ActionLink("Admin Area", "Index", "Dashboard", new { area = "Admin" }, null) </li>
 
             }
+
+
         </ul>
     </div>
+    
 
     <div>
 

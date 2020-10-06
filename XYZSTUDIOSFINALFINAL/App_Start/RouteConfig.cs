@@ -13,13 +13,30 @@ namespace XYZSTUDIOSFINALFINAL
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.MapRoute(
+                    name: "Default",
+                    url: "{controller}/{action}/{id}",
+                    defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+                    new[] { "XYZSTUDIOSFINALFINAL.Controllers" }
+            );
+
             routes.MapRoute("Account", "Account{action}/{id}", new { Controller = "Account", Action = "Index", id = UrlParameter.Optional }, new[] { "XYZSTUDIOSFINALFINAL" });
 
             routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                "Pages",
+                "{controller}/{action}/{id}",
+                new { controller = "Pages", action = "Index", id = UrlParameter.Optional },
+                new[] { "XYZSTUDIOSFINALFINAL.Controllers" }
             );
+
+            routes.MapRoute(
+                "Admin",
+                "Admin/{controller}/{action}/{id}",
+                new { Controller ="Pages" , action = "Index", id = UrlParameter.Optional },
+                new[] { "XYZSTUDIOSFINALFINAL.Areas.Admin.Controllers" }
+            );
+
+
         }
     }
 }

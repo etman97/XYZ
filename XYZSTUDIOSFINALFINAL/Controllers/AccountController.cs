@@ -1,12 +1,8 @@
-﻿using XYZSTUDIOSFINALFINAL.Models.Data;
-using XYZSTUDIOSFINALFINAL.Models.ViewModels.Account;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
 using System.Web.Security;
-using System.Web.Configuration;
+using XYZSTUDIOSFINALFINAL.Models.Data;
+using XYZSTUDIOSFINALFINAL.Models.ViewModels.Account;
 
 namespace XYZSTUDIOSFINALFINAL.Controllers
 {
@@ -60,11 +56,6 @@ namespace XYZSTUDIOSFINALFINAL.Controllers
                 ModelState.AddModelError("", "Invalid username or password.");
                 return View(model);
             }
-            else
-            {
-                FormsAuthentication.SetAuthCookie(model.Username, model.RememberMe);
-                return Redirect(FormsAuthentication.GetRedirectUrl(model.Username, model.RememberMe));
-            }
         }
 
         // GET: /account/create-account
@@ -110,6 +101,7 @@ namespace XYZSTUDIOSFINALFINAL.Controllers
                     LastName = model.LastName,
                     EmailAddress = model.EmailAddress,
                     Username = model.Username,
+                    PhoneNumber = model.PhoneNumber,
                     Password = model.Password
                 };
 
@@ -240,6 +232,7 @@ namespace XYZSTUDIOSFINALFINAL.Controllers
                 dto.LastName = model.LastName;
                 dto.EmailAddress = model.EmailAddress;
                 dto.Username = model.Username;
+                dto.PhoneNumber = model.PhoneNumber;
 
                 if (!string.IsNullOrWhiteSpace(model.Password))
                 {
