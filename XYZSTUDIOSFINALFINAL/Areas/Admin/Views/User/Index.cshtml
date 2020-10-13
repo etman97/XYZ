@@ -1,0 +1,38 @@
+﻿@model IEnumerable<XYZSTUDIOSFINALFINAL.Models.ViewModels.Account.UserVM>
+
+@{
+    ViewBag.Title = "Uesr";
+}
+
+<h2>Index</h2>
+
+
+@if (!Model.Any())
+{
+    <h1 class="text-center">There are no pages.</h1> }
+else
+{
+    <table class="table sorting" id="pages">
+        <tr class="home">
+            <th>
+                Title
+            </th>
+            <th>
+                User Name
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr id="id_@item.Id">
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Username)
+                </td>
+            </tr>
+        }
+
+    </table>}
