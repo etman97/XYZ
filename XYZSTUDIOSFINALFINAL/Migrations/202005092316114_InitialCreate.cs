@@ -1,8 +1,7 @@
 ﻿namespace XYZSTUDIOSFINALFINAL.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class InitialCreate : DbMigration
     {
         public override void Up()
@@ -10,36 +9,36 @@
             CreateTable(
                 "dbo.tblRoles",
                 c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
-                    })
+                {
+                    Id = c.Int(nullable: false, identity: true),
+                    Name = c.String(),
+                })
                 .PrimaryKey(t => t.Id);
-            
+
             CreateTable(
                 "dbo.tblUserRoles",
                 c => new
-                    {
-                        UserId = c.Int(nullable: false),
-                        RoleId = c.Int(nullable: false),
-                    })
+                {
+                    UserId = c.Int(nullable: false),
+                    RoleId = c.Int(nullable: false),
+                })
                 .PrimaryKey(t => new { t.UserId, t.RoleId })
                 .ForeignKey("dbo.tblRoles", t => t.RoleId, cascadeDelete: true)
                 .ForeignKey("dbo.tblUsers", t => t.UserId, cascadeDelete: true)
                 .Index(t => t.UserId)
                 .Index(t => t.RoleId);
-            
+
             CreateTable(
                 "dbo.tblUsers",
                 c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        FirstName = c.String(),
-                        LastName = c.String(),
-                        EmailAddress = c.String(),
-                        Username = c.String(),
-                        Password = c.String(),
-                    })
+                {
+                    Id = c.Int(nullable: false, identity: true),
+                    FirstName = c.String(),
+                    LastName = c.String(),
+                    EmailAddress = c.String(),
+                    Username = c.String(),
+                    Password = c.String(),
+                })
                 .PrimaryKey(t => t.Id);
 
             AddColumn("dbo.tblUser", "Role", c => c.Boolean());
@@ -69,7 +68,7 @@
                 .Index(t => t.RoleId);
 
         }
-        
+
         public override void Down()
         {
             DropForeignKey("dbo.tblUserRoles", "UserId", "dbo.tblUsers");

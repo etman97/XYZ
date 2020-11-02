@@ -56,6 +56,12 @@ namespace XYZSTUDIOSFINALFINAL.Controllers
                 ModelState.AddModelError("", "Invalid username or password.");
                 return View(model);
             }
+            else
+            {
+                FormsAuthentication.SetAuthCookie(model.Username, model.RememberMe);
+                return Redirect(FormsAuthentication.GetRedirectUrl(model.Username, model.RememberMe));
+            }
+
         }
 
         // GET: /account/create-account

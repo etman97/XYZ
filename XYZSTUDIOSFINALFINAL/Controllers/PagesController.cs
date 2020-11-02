@@ -1,11 +1,5 @@
-﻿using Microsoft.Ajax.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
-using System.Web.WebPages;
-using System.Xml.Schema;
 using XYZSTUDIOSFINALFINAL.Models.Data;
 using XYZSTUDIOSFINALFINAL.Models.ViewModels.Pages;
 
@@ -16,7 +10,7 @@ namespace XYZSTUDIOSFINALFINAL.Controllers
         // GET: Pages
         public ActionResult Index()
         {
-            PageVM  model;
+            PageVM model;
             PageDTO dto;
 
             using (Db db = new Db())

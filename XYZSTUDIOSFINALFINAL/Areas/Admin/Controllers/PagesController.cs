@@ -1,12 +1,8 @@
-﻿using XYZSTUDIOSFINALFINAL.Models.Data;
-using XYZSTUDIOSFINALFINAL.Models.ViewModels.Pages;
-using System;
-using System.IO;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web.Helpers;
-using System.Web;
 using System.Web.Mvc;
+using XYZSTUDIOSFINALFINAL.Models.Data;
+using XYZSTUDIOSFINALFINAL.Models.ViewModels.Pages;
 
 namespace XYZSTUDIOSFINALFINAL.Areas.Admin.Controllers
 {
@@ -42,7 +38,7 @@ namespace XYZSTUDIOSFINALFINAL.Areas.Admin.Controllers
             return View(model);
         }
         // POST: Admin/Pages/AddPage
-        [HttpPost , ValidateInput(false)]
+        [HttpPost, ValidateInput(false)]
         public ActionResult AddPage(PageVM model)
         {
             // Check model state
@@ -68,7 +64,7 @@ namespace XYZSTUDIOSFINALFINAL.Areas.Admin.Controllers
                 dto.Username = userDTO.Username;
 
                 // Make sure title and slug are unique
-                if (db.pages.Any(x => x.Title == model.Title)|| db.pages.Any(x => x.UserId == model.UserId))
+                if (db.pages.Any(x => x.Title == model.Title) || db.pages.Any(x => x.UserId == model.UserId))
                 {
                     ModelState.AddModelError("", "That title already exists.");
                     return View(model);
@@ -118,7 +114,7 @@ namespace XYZSTUDIOSFINALFINAL.Areas.Admin.Controllers
         }
 
         // POST: Admin/Pages/EditPage/id
-        [HttpPost , ValidateInput(false)]
+        [HttpPost, ValidateInput(false)]
         public ActionResult EditPage(PageVM model)
         {
             // Check model state
@@ -145,7 +141,7 @@ namespace XYZSTUDIOSFINALFINAL.Areas.Admin.Controllers
 
 
                 // Make sure title and slug are unique
-                if (db.pages.Where(x => x.Id != id).Any(x => x.Title == model.Title)) 
+                if (db.pages.Where(x => x.Id != id).Any(x => x.Title == model.Title))
                 {
                     ModelState.AddModelError("", "That title or slug already exists.");
                     return View(model);

@@ -1,9 +1,5 @@
-﻿using XYZSTUDIOSFINALFINAL.Models.Data;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
+﻿using System.ComponentModel.DataAnnotations;
+using XYZSTUDIOSFINALFINAL.Models.Data;
 
 namespace XYZSTUDIOSFINALFINAL.Models.ViewModels.Account
 {

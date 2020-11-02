@@ -1,12 +1,8 @@
-﻿using XYZSTUDIOSFINALFINAL.Models.Data;
-using XYZSTUDIOSFINALFINAL.Models.ViewModels.Account;
-using System;
-using System.IO;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web.Helpers;
-using System.Web;
 using System.Web.Mvc;
+using XYZSTUDIOSFINALFINAL.Models.Data;
+using XYZSTUDIOSFINALFINAL.Models.ViewModels.Account;
 
 namespace XYZSTUDIOSFINALFINAL.Areas.Admin.Controllers
 {

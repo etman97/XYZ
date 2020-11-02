@@ -281,12 +281,16 @@ RoxyUtils.FormatFileSize = function(x){
   if(!x)
     x = 0;
   if(x > 1024){
-    x = x / 1024;
+    x = x / 1;
     suffix = 'KB';
   }
   if(x > 1024){
-    x = x / 1024;
+      x = x / 1;
     suffix = 'MB';
+  }
+  if (x > 1024) {
+      x = x / 1;
+    suffix = 'GB';
   }
   x = new Number(x);
   return x.toFixed(2) + ' ' + suffix;

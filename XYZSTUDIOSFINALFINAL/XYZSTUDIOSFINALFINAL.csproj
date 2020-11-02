@@ -148,8 +148,13 @@
     <Compile Include="Migrations\202006232205455_code-based migration.designer.cs">
       <DependentUpon>202006232205455_code-based migration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202010141235412_PhoneNumber.cs" />
+    <Compile Include="Migrations\202010141235412_PhoneNumber.designer.cs">
+      <DependentUpon>202010141235412_PhoneNumber.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Data\Db.cs" />
+    <Compile Include="Models\Data\ImageDTO.cs" />
     <Compile Include="Models\Data\PageDTO.cs" />
     <Compile Include="Models\Data\RoleDTO.cs" />
     <Compile Include="Models\Data\UserDTO.cs" />
@@ -158,6 +163,7 @@
     <Compile Include="Models\ViewModels\Account\UserNavPartialVM.cs" />
     <Compile Include="Models\ViewModels\Account\UserProfileVM.cs" />
     <Compile Include="Models\ViewModels\Account\UserVM.cs" />
+    <Compile Include="Models\ViewModels\Images\ImageVM.cs" />
     <Compile Include="Models\ViewModels\Pages\PageVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -997,6 +1003,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202006232205455_code-based migration.resx">
       <DependentUpon>202006232205455_code-based migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010141235412_PhoneNumber.resx">
+      <DependentUpon>202010141235412_PhoneNumber.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
