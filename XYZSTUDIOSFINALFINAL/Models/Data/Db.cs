@@ -8,7 +8,6 @@ namespace XYZSTUDIOSFINALFINAL.Models.Data
         public DbSet<RoleDTO> Roles { get; set; }
         public DbSet<UserRoleDTO> UserRoles { get; set; }
         public DbSet<PageDTO> pages { get; set; }
-        //  public DbSet<ImageDTO> Images { get; set; }
 
     }
 }

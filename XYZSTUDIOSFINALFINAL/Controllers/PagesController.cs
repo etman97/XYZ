@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Web;
 using System.Web.Mvc;
 using XYZSTUDIOSFINALFINAL.Models.Data;
 using XYZSTUDIOSFINALFINAL.Models.ViewModels.Pages;
@@ -41,6 +42,20 @@ namespace XYZSTUDIOSFINALFINAL.Controllers
         public ActionResult pages()
         {
             return View();
+        }
+
+        public FileResult DownloadFile(string fileName)
+        {
+            var filepath = System.IO.Path.Combine(Server.MapPath("/Files/"), fileName);
+            return File(filepath, MimeMapping.GetMimeMapping(filepath), fileName);
+        }
+
+        public void DownloadAll(string[] array)
+        {
+            foreach (string name in array)
+            {
+                DownloadFile(name);
+            }
         }
     }
 }

@@ -36,3 +36,41 @@ C:\Users\Mahmoud Etman\source\repos\XYZSTUDIOSFINALFINAL\XYZSTUDIOSFINALFINAL\bi
 C:\Users\Mahmoud Etman\source\repos\XYZSTUDIOSFINALFINAL\XYZSTUDIOSFINALFINAL\bin\System.Web.WebPages.Razor.dll
 C:\Users\Mahmoud Etman\source\repos\XYZSTUDIOSFINALFINAL\XYZSTUDIOSFINALFINAL\bin\WebGrease.dll
 C:\Users\Mahmoud Etman\source\repos\XYZSTUDIOSFINALFINAL\XYZSTUDIOSFINALFINAL\obj\Debug\XYZSTUDIOSFINALFINAL.Migrations.PhoneNumber.resources
+C:\Users\Etman\source\repos\XYZSTUDIOSFINALFINAL\XYZSTUDIOSFINALFINAL\bin\XYZSTUDIOSFINALFINAL.dll.config
+C:\Users\Etman\source\repos\XYZSTUDIOSFINALFINAL\XYZSTUDIOSFINALFINAL\bin\XYZSTUDIOSFINALFINAL.dll
+C:\Users\Etman\source\repos\XYZSTUDIOSFINALFINAL\XYZSTUDIOSFINALFINAL\bin\XYZSTUDIOSFINALFINAL.pdb
+C:\Users\Etman\source\repos\XYZSTUDIOSFINALFINAL\XYZSTUDIOSFINALFINAL\bin\Antlr3.Runtime.dll
+C:\Users\Etman\source\repos\XYZSTUDIOSFINALFINAL\XYZSTUDIOSFINALFINAL\bin\EntityFramework.dll
+C:\Users\Etman\source\repos\XYZSTUDIOSFINALFINAL\XYZSTUDIOSFINALFINAL\bin\EntityFramework.SqlServer.dll
+C:\Users\Etman\source\repos\XYZSTUDIOSFINALFINAL\XYZSTUDIOSFINALFINAL\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Etman\source\repos\XYZSTUDIOSFINALFINAL\XYZSTUDIOSFINALFINAL\bin\Newtonsoft.Json.dll
+C:\Users\Etman\source\repos\XYZSTUDIOSFINALFINAL\XYZSTUDIOSFINALFINAL\bin\System.Data.SqlClient.dll
+C:\Users\Etman\source\repos\XYZSTUDIOSFINALFINAL\XYZSTUDIOSFINALFINAL\bin\System.Web.Helpers.dll
+C:\Users\Etman\source\repos\XYZSTUDIOSFINALFINAL\XYZSTUDIOSFINALFINAL\bin\System.Web.Mvc.dll
+C:\Users\Etman\source\repos\XYZSTUDIOSFINALFINAL\XYZSTUDIOSFINALFINAL\bin\System.Web.Optimization.dll
+C:\Users\Etman\source\repos\XYZSTUDIOSFINALFINAL\XYZSTUDIOSFINALFINAL\bin\System.Web.Razor.dll
+C:\Users\Etman\source\repos\XYZSTUDIOSFINALFINAL\XYZSTUDIOSFINALFINAL\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Etman\source\repos\XYZSTUDIOSFINALFINAL\XYZSTUDIOSFINALFINAL\bin\System.Web.WebPages.dll
+C:\Users\Etman\source\repos\XYZSTUDIOSFINALFINAL\XYZSTUDIOSFINALFINAL\bin\System.Web.WebPages.Razor.dll
+C:\Users\Etman\source\repos\XYZSTUDIOSFINALFINAL\XYZSTUDIOSFINALFINAL\bin\WebGrease.dll
+C:\Users\Etman\source\repos\XYZSTUDIOSFINALFINAL\XYZSTUDIOSFINALFINAL\bin\EntityFramework.xml
+C:\Users\Etman\source\repos\XYZSTUDIOSFINALFINAL\XYZSTUDIOSFINALFINAL\bin\EntityFramework.SqlServer.xml
+C:\Users\Etman\source\repos\XYZSTUDIOSFINALFINAL\XYZSTUDIOSFINALFINAL\bin\Newtonsoft.Json.xml
+C:\Users\Etman\source\repos\XYZSTUDIOSFINALFINAL\XYZSTUDIOSFINALFINAL\bin\System.Data.SqlClient.xml
+C:\Users\Etman\source\repos\XYZSTUDIOSFINALFINAL\XYZSTUDIOSFINALFINAL\bin\System.Web.Helpers.xml
+C:\Users\Etman\source\repos\XYZSTUDIOSFINALFINAL\XYZSTUDIOSFINALFINAL\bin\System.Web.Mvc.xml
+C:\Users\Etman\source\repos\XYZSTUDIOSFINALFINAL\XYZSTUDIOSFINALFINAL\bin\System.Web.Optimization.xml
+C:\Users\Etman\source\repos\XYZSTUDIOSFINALFINAL\XYZSTUDIOSFINALFINAL\bin\System.Web.Razor.xml
+C:\Users\Etman\source\repos\XYZSTUDIOSFINALFINAL\XYZSTUDIOSFINALFINAL\bin\System.Web.WebPages.xml
+C:\Users\Etman\source\repos\XYZSTUDIOSFINALFINAL\XYZSTUDIOSFINALFINAL\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Etman\source\repos\XYZSTUDIOSFINALFINAL\XYZSTUDIOSFINALFINAL\bin\System.Web.WebPages.Razor.xml
+C:\Users\Etman\source\repos\XYZSTUDIOSFINALFINAL\XYZSTUDIOSFINALFINAL\bin\Antlr3.Runtime.pdb
+C:\Users\Etman\source\repos\XYZSTUDIOSFINALFINAL\XYZSTUDIOSFINALFINAL\obj\Debug\XYZSTUDIOSFINALFINAL.Migrations.InitialCreate.resources
+C:\Users\Etman\source\repos\XYZSTUDIOSFINALFINAL\XYZSTUDIOSFINALFINAL\obj\Debug\XYZSTUDIOSFINALFINAL.Migrations.codebasedmigration.resources
+C:\Users\Etman\source\repos\XYZSTUDIOSFINALFINAL\XYZSTUDIOSFINALFINAL\obj\Debug\XYZSTUDIOSFINALFINAL.Migrations.PhoneNumber.resources
+C:\Users\Etman\source\repos\XYZSTUDIOSFINALFINAL\XYZSTUDIOSFINALFINAL\obj\Debug\XYZSTUDIOSFINALFINAL.csproj.GenerateResource.cache
+C:\Users\Etman\source\repos\XYZSTUDIOSFINALFINAL\XYZSTUDIOSFINALFINAL\obj\Debug\XYZSTUDIOSFINALFINAL.csproj.CoreCompileInputs.cache
+C:\Users\Etman\source\repos\XYZSTUDIOSFINALFINAL\XYZSTUDIOSFINALFINAL\obj\Debug\XYZSTUDIOSFINALFINAL.csproj.CopyComplete
+C:\Users\Etman\source\repos\XYZSTUDIOSFINALFINAL\XYZSTUDIOSFINALFINAL\obj\Debug\XYZSTUDIOSFINALFINAL.dll
+C:\Users\Etman\source\repos\XYZSTUDIOSFINALFINAL\XYZSTUDIOSFINALFINAL\obj\Debug\XYZSTUDIOSFINALFINAL.pdb
+C:\Users\Etman\source\repos\XYZSTUDIOSFINALFINAL\XYZSTUDIOSFINALFINAL\obj\Debug\XYZSTUDIOSFINALFINAL.csproj.AssemblyReference.cache

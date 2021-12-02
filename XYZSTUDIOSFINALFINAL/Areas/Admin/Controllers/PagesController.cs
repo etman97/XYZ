@@ -1,5 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Web;
 using System.Web.Mvc;
 using XYZSTUDIOSFINALFINAL.Models.Data;
 using XYZSTUDIOSFINALFINAL.Models.ViewModels.Pages;
@@ -39,7 +43,8 @@ namespace XYZSTUDIOSFINALFINAL.Areas.Admin.Controllers
         }
         // POST: Admin/Pages/AddPage
         [HttpPost, ValidateInput(false)]
-        public ActionResult AddPage(PageVM model)
+        [ValidateAntiForgeryToken]
+        public ActionResult AddPage(PageVM model, IEnumerable<HttpPostedFileBase> files)
         {
             // Check model state
             if (!ModelState.IsValid)
@@ -76,89 +81,27 @@ namespace XYZSTUDIOSFINALFINAL.Areas.Admin.Controllers
                 // Save DTO
                 db.pages.Add(dto);
                 db.SaveChanges();
+
             }
 
-            // Set TempData message
-            TempData["SM"] = "You have added a new page!";
+            foreach (var file in files)
+            {
+                if (file != null && file.ContentLength > 0)
+                {
+                    var fileName = Path.GetFileName(file.FileName);
+                    var pathString = Path.Combine(Server.MapPath("~/UploadedFiles/"),model.Title );
+                    if (!Directory.Exists(pathString))
+                    { Directory.CreateDirectory(pathString); }
 
+                    var path = string.Format("{0}\\{1}", pathString, fileName);
+
+                    file.SaveAs(path);
+                }
+            }
+                // Set TempData message
+                TempData["SM"] = "You have added a new page!";
             // Redirect
             return RedirectToAction("AddPage");
-        }
-
-        // GET: Admin/Pages/EditPage/id
-        [HttpGet]
-        public ActionResult EditPage(int id)
-        {
-            // Declare pageVM
-            PageVM model;
-
-            using (Db db = new Db())
-            {
-                // Get the page
-                PageDTO dto = db.pages.Find(id);
-
-                // Confirm page exists
-                if (dto == null)
-                {
-                    return Content("The page does not exist.");
-                }
-
-                // Init pageVM
-                model = new PageVM(dto);
-                model.Users = new SelectList(db.Users.ToList(), "Id", "Username");
-
-            }
-
-            // Return view with model
-            return View(model);
-        }
-
-        // POST: Admin/Pages/EditPage/id
-        [HttpPost, ValidateInput(false)]
-        public ActionResult EditPage(PageVM model)
-        {
-            // Check model state
-            if (!ModelState.IsValid)
-            {
-                return View(model);
-            }
-
-            // Get page id
-            int id = model.Id;
-
-            using (Db db = new Db())
-            {
-                model.Users = new SelectList(db.Users.ToList(), "Id", "Username");
-
-                // Get the page
-                PageDTO dto = db.pages.Find(id);
-
-                // DTO the title
-                dto.Title = model.Title;
-                dto.UserId = model.UserId;
-                UserDTO userDTO = db.Users.FirstOrDefault(x => x.Id == model.UserId);
-                dto.Username = userDTO.Username;
-
-
-                // Make sure title and slug are unique
-                if (db.pages.Where(x => x.Id != id).Any(x => x.Title == model.Title))
-                {
-                    ModelState.AddModelError("", "That title or slug already exists.");
-                    return View(model);
-                }
-
-                // DTO the rest
-                dto.Body = model.Body;
-
-                // Save the DTO
-                db.SaveChanges();
-            }
-
-            // Set TempData message
-            TempData["SM"] = "You have edited the page!";
-
-            // Redirect
-            return RedirectToAction("EditPage");
         }
 
         // GET: Admin/Pages/PageDetails/id
@@ -199,8 +142,12 @@ namespace XYZSTUDIOSFINALFINAL.Areas.Admin.Controllers
 
                 // Save
                 db.SaveChanges();
-            }
+                
 
+                string Path = Server.MapPath("~/UploadedFiles/"+ dto.Title);
+
+                Directory.Delete(Path, true);
+            }
             // Redirect
             return RedirectToAction("Index");
         }

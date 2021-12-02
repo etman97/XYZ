@@ -5,4 +5,23 @@
     TempData["PageTitle"] = ViewBag.PageTitle;
 
 }
-@Html.Raw(Model.Body)
+<br />
+<br />
+
+@{ string[] array = Directory.GetFiles(Server.MapPath("~/UploadedFiles/" + Model.Title));
+    foreach (string name in array)
+    {
+        var ad1file = Path.GetFileName(name);
+
+        <img src="/UploadedFiles/@Model.Title/@ad1file" style="height:300px;" />
+        <br />
+        <br />
+        @Html.ActionLink("DownLoad", "DownloadFile", new { fileName = name })
+        <br />
+        <br />
+    }
+
+<br />
+<br />
+
+}

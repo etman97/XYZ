@@ -154,7 +154,6 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Data\Db.cs" />
-    <Compile Include="Models\Data\ImageDTO.cs" />
     <Compile Include="Models\Data\PageDTO.cs" />
     <Compile Include="Models\Data\RoleDTO.cs" />
     <Compile Include="Models\Data\UserDTO.cs" />
@@ -163,7 +162,6 @@
     <Compile Include="Models\ViewModels\Account\UserNavPartialVM.cs" />
     <Compile Include="Models\ViewModels\Account\UserProfileVM.cs" />
     <Compile Include="Models\ViewModels\Account\UserVM.cs" />
-    <Compile Include="Models\ViewModels\Images\ImageVM.cs" />
     <Compile Include="Models\ViewModels\Pages\PageVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -830,7 +828,6 @@
     <Content Include="Areas\Admin\Views\Dashboard\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Pages\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Pages\AddPage.cshtml" />
-    <Content Include="Areas\Admin\Views\Pages\EditPage.cshtml" />
     <Content Include="Areas\Admin\Views\Pages\PageDetails.cshtml" />
     <Content Include="Scripts\ckeditor\ckeditor.pack" />
     <Content Include="fileman\asp_net\main.ashx" />
@@ -996,6 +993,8 @@
     <Folder Include="fileman\tmp\" />
     <Folder Include="fileman\Uploads\Documents\" />
     <Folder Include="fileman\Uploads\FLV\" />
+    <Folder Include="Image\" />
+    <Folder Include="UploadedFiles\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202005092316114_InitialCreate.resx">
